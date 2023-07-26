@@ -31,7 +31,8 @@ void m_freestack(stack_t *head)
 int m_executefunct(char *content, stack_t **stack, unsigned int c, FILE *file)
 {
 	instruction_t opst[] = {
-		{"push", t0_push}, {"pall", t0_pall}, {NULL, NULL}
+		{"push", t0_push}, {"pall", t0_pall}, {"pint", t1_pint}
+		, {NULL, NULL}
 	};
 	unsigned int i = 0;
 	char *op;
