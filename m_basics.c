@@ -32,7 +32,7 @@ int m_executefunct(char *content, stack_t **stack, unsigned int c, FILE *file)
 {
 	instruction_t opst[] = {
 		{"push", t0_push}, {"pall", t0_pall}, {"pint", t1_pint}
-		, {NULL, NULL}
+		, {"pop", t2_pop}, {NULL, NULL}
 	};
 	unsigned int i = 0;
 	char *op;
