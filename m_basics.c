@@ -32,7 +32,8 @@ int m_executefunct(char *content, stack_t **stack, unsigned int c, FILE *file)
 {
 	instruction_t opst[] = {
 		{"push", t0_push}, {"pall", t0_pall}, {"pint", t1_pint}
-		, {"pop", t2_pop}, {"swap", t3_swap}, {NULL, NULL}
+		, {"pop", t2_pop}, {"swap", t3_swap}, {"add", t4_add}
+		, {"nop", t5_nop}, {"sub", t6_sub}, {NULL, NULL}
 	};
 	unsigned int i = 0;
 	char *op;
@@ -60,4 +61,37 @@ int m_executefunct(char *content, stack_t **stack, unsigned int c, FILE *file)
 		exit(EXIT_FAILURE);
 	}
 	return (1);
+}
+
+void m_function(stack_t **head, unsigned int c, char *message, int flag)
+{
+	stack_t *head0;
+	int l;
+
+	if (flag == 1)
+	{
+		l = 0;
+		head0 = *head;
+		while (head0)
+		{
+			head0 = head0->next;
+			l++;
+		}
+		if (l < 2)
+		{
+			fprintf(stderr, "L%d: %s\n", c, message);
+			fclose(bus.file);
+			free(bus.content);
+			m_freestack(*head);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		fprintf(stderr, "L%d: %s\n", c, message);
+		fclose(bus.file);
+		free(bus.content);
+		m_freestack(*head);
+		exit(EXIT_FAILURE);
+	}
 }
