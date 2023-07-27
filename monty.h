@@ -71,4 +71,7 @@ void t3_swap(stack_t **head, unsigned int c);
 void t4_add(stack_t **head, unsigned int c);
 void t5_nop(stack_t **head, unsigned int c);
 void t6_sub(stack_t **head, unsigned int c);
+void t7_div(stack_t **head, unsigned int c);
+void t8_mul(stack_t **head, unsigned int c);
+void t9_mod(stack_t **head, unsigned int c);
 #endif

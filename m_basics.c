@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void free_stack(stack_t *head);
+void m_freestack(stack_t *head);
 /**
 * m_freestack - frees a doubly linked list
 * @head: pointer
@@ -31,7 +31,8 @@ int m_executefunct(char *content, stack_t **stack, unsigned int c, FILE *file)
 	instruction_t opst[] = {
 		{"push", t0_push}, {"pall", t0_pall}, {"pint", t1_pint}
 		, {"pop", t2_pop}, {"swap", t3_swap}, {"add", t4_add}
-		, {"nop", t5_nop}, {"sub", t6_sub}, {NULL, NULL}
+		, {"nop", t5_nop}, {"sub", t6_sub}, {"div", t7_div}
+		, {"mul", t8_mul}, {"mod", t9_mod}, {NULL, NULL}
 	};
 	unsigned int i = 0;
 	char *op;
