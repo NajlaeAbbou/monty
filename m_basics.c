@@ -1,7 +1,5 @@
 #include "monty.h"
 
-void addnode(stack_t **head, int n);
-void addqueue(stack_t **head, int n);
 void free_stack(stack_t *head);
 /**
 * m_freestack - frees a doubly linked list
@@ -63,7 +61,7 @@ int m_executefunct(char *content, stack_t **stack, unsigned int c, FILE *file)
 	return (1);
 }
 
-void m_function(stack_t **head, unsigned int c, char *message, int flag)
+void m_function(stack_t *head, unsigned int c, char *message, int flag)
 {
 	stack_t *head0;
 	int l;
@@ -71,7 +69,7 @@ void m_function(stack_t **head, unsigned int c, char *message, int flag)
 	if (flag == 1)
 	{
 		l = 0;
-		head0 = *head;
+		head0 = head;
 		while (head0)
 		{
 			head0 = head0->next;
@@ -82,7 +80,7 @@ void m_function(stack_t **head, unsigned int c, char *message, int flag)
 			fprintf(stderr, "L%d: %s\n", c, message);
 			fclose(bus.file);
 			free(bus.content);
-			m_freestack(*head);
+			m_freestack(head);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -91,7 +89,7 @@ void m_function(stack_t **head, unsigned int c, char *message, int flag)
 		fprintf(stderr, "L%d: %s\n", c, message);
 		fclose(bus.file);
 		free(bus.content);
-		m_freestack(*head);
+		m_freestack(head);
 		exit(EXIT_FAILURE);
 	}
 }

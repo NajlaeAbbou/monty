@@ -22,21 +22,13 @@ void t0_push(stack_t **head, unsigned int c)
 		}
 		if (mark == 1)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", c);
-			fclose(bus.file);
-			free(bus.content);
-			m_freestack(*head);
-			exit(EXIT_FAILURE);
+			m_function(*head, c, "usage: push integer", 0);
 		}
 	}
 
 	else
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", c);
-		fclose(bus.file);
-		free(bus.content);
-		m_freestack(*head);
-		exit(EXIT_FAILURE);
+		m_function(*head, c, "usage: push integer", 0);
 	}
 
 	j = atoi(bus.arg);

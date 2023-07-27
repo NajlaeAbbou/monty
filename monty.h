@@ -64,7 +64,7 @@ void add_node(stack_t **head, int n);
 void add_queue(stack_t **head, int n);
 void m_freestack(stack_t *head);
 int m_executefunct(char *content, stack_t **stack, unsigned int c, FILE *file);
-void m_function(stack_t **head, unsigned int c, char *message, int flag);
+void m_function(stack_t *head, unsigned int c, char *message, int flag);
 void t1_pint(stack_t **head, unsigned int c);
 void t2_pop(stack_t **head, unsigned int c);
 void t3_swap(stack_t **head, unsigned int c);

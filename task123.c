@@ -8,11 +8,7 @@ void t1_pint(stack_t **head, unsigned int c)
 {
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", c);
-		fclose(bus.file);
-		free(bus.content);
-		m_freestack(*head);
-		exit(EXIT_FAILURE);
+		m_function(*head, c, "can't pint, stack empty", 0);
 	}
 	printf("%d\n", (*head)->n);
 }
@@ -28,11 +24,7 @@ void t2_pop(stack_t **head, unsigned int c)
 
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", c);
-		fclose(bus.file);
-		free(bus.content);
-		m_freestack(*head);
-		exit(EXIT_FAILURE);
+		m_function(*head, c, "can't pop an empty stack", 0);
 	}
 	head0 = *head;
 	*head = head0->next;
@@ -47,23 +39,9 @@ void t2_pop(stack_t **head, unsigned int c)
 void t3_swap(stack_t **head, unsigned int c)
 {
 	stack_t *head0;
-	int l, a;
+	int a;
 
-	l = 0;
-	head0 = *head;
-	while (head0)
-	{
-		head0 = head0->next;
-		l++;
-	}
-	if (l < 2)
-	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", c);
-		fclose(bus.file);
-		free(bus.content);
-		m_freestack(*head);
-		exit(EXIT_FAILURE);
-	}
+	m_function(*head, c, "can't swap, stack too short", 1);
 	head0 = *head;
 	a = head0->n;
 	head0->n = head0->next->n;
