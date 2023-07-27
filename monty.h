@@ -52,7 +52,7 @@ typedef struct bus_s
 	FILE *file;
 	char *content;
 	int lifi;
-}  bus_t;
+} bus_t;
 extern bus_t bus;
 
 
@@ -80,4 +80,5 @@ void t14_rotr(stack_t **head, unsigned int c);
 void t15_stack(stack_t **head, unsigned int c);
 void t15_queue(stack_t **head, unsigned int c);
 void t9_mod(stack_t **head, unsigned int c);
+
 #endif
