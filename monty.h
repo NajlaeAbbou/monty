@@ -73,5 +73,11 @@ void t5_nop(stack_t **head, unsigned int c);
 void t6_sub(stack_t **head, unsigned int c);
 void t7_div(stack_t **head, unsigned int c);
 void t8_mul(stack_t **head, unsigned int c);
+void t11_pchar(stack_t **head, unsigned int c);
+void t12_pstr(stack_t **head, unsigned int c);
+void t13_rotl(stack_t **head, unsigned int c);
+void t14_rotr(stack_t **head, unsigned int c);
+void t15_stack(stack_t **head, unsigned int c);
+void t15_queue(stack_t **head, unsigned int c);
 void t9_mod(stack_t **head, unsigned int c);
 #endif

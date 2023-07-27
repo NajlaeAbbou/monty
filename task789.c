@@ -11,11 +11,11 @@ void t7_div(stack_t **head, unsigned int c)
 	stack_t *head0;
 	int a;
 
-	m_function(*head, c, "can't div, stack too short",1);
+	m_function(*head, c, "can't div, stack too short", 1);
 	head0 = *head;
 	if (head0->n == 0)
 	{
-		m_function(*head, c, "division by zero",0);
+		m_function(*head, c, "division by zero", 0);
 	}
 	a = head0->next->n / head0->n;
 	head0->next->n = a;

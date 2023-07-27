@@ -32,7 +32,9 @@ int m_executefunct(char *content, stack_t **stack, unsigned int c, FILE *file)
 		{"push", t0_push}, {"pall", t0_pall}, {"pint", t1_pint}
 		, {"pop", t2_pop}, {"swap", t3_swap}, {"add", t4_add}
 		, {"nop", t5_nop}, {"sub", t6_sub}, {"div", t7_div}
-		, {"mul", t8_mul}, {"mod", t9_mod}, {NULL, NULL}
+		, {"mul", t8_mul}, {"mod", t9_mod}, {"pchar", t11_pchar}
+		, {"pstr", t12_pstr}, {"rotl", t13_rotl}, {"rotr", t14_rotr}
+		, {"stack", t15_stack}, {"queue", t15_queue}, {NULL, NULL}
 	};
 	unsigned int i = 0;
 	char *op;
