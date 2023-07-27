@@ -8,23 +8,9 @@
 void t4_add(stack_t **head, unsigned int c)
 {
 	stack_t *head0;
-	int l, a;
+	int a;
 
-	l = 0;
-	head0 = *head;
-	while (head0)
-	{
-		head0 = head0->next;
-		l++;
-	}
-	if (l< 2)
-	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", c);
-		fclose(bus.file);
-		free(bus.content);
-		m_freestack(*head);
-		exit(EXIT_FAILURE);
-	}
+	m_function(*head, c, "can't add, stack too short", 1);
 	head0 = *head;
 	a = head0->n + head0->next->n;
 	head0->next->n = a;
@@ -33,7 +19,7 @@ void t4_add(stack_t **head, unsigned int c)
 }
 
 /**
- *t5_nop - doesn’t do anything. 
+ *t5_nop - doesn’t do anything.
  *@head: pointer
  *@c: int
  */
@@ -46,24 +32,14 @@ void t5_nop(stack_t **head, unsigned int c)
 /**
  *t6_sub -  subtracts the top element of the stack from the second
  *@head: pointer
- *c: int
+ *@c: int
  */
 void t6_sub(stack_t **head, unsigned int c)
 {
 	stack_t *head0;
-	int res, i;
+	int res;
 
-	head0 = *head;
-	for (i = 0; head0 != NULL; i++)
-		head0 = head0->next;
-	if (i < 2)
-	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", c);
-		fclose(bus.file);
-		free(bus.content);
-		m_freestack(*head);
-		exit(EXIT_FAILURE);
-	}
+	m_function(*head, c, "can't sub, stack too short", 1);
 	head0 = *head;
 	res = head0->next->n - head0->n;
 	head0->next->n = res;
